@@ -2,6 +2,10 @@ let currentUser = null;
 let allClips = [];
 let videoSeekUsed = {};
 
+const API_BASE_URL = window.location.hostname.includes('github.io') 
+    ? 'https://e97c596c-1393-4a77-9095-957f14de7d2f-00-3apfzvtuj9297.janeway.replit.dev'
+    : '';
+
 document.addEventListener('DOMContentLoaded', function() {
     createParticles();
     initNavbar();
@@ -321,7 +325,7 @@ function initLoginSystem() {
             const password = document.getElementById('loginPassword').value;
             
             try {
-                const response = await fetch('/api/login', {
+                const response = await fetch(API_BASE_URL + '/api/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -427,7 +431,7 @@ function loadDiscordStats() {
     if (!onlineCount || !membersCount) return;
     
     function fetchStats() {
-        fetch('/api/discord-stats')
+        fetch(API_BASE_URL + '/api/discord-stats')
             .then(response => response.json())
             .then(data => {
                 if (data.members > 0) {
@@ -488,7 +492,7 @@ function initUploadModal() {
             const password = document.getElementById('uploadLoginPassword').value;
             
             try {
-                const response = await fetch('/api/login', {
+                const response = await fetch(API_BASE_URL + '/api/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ password })
@@ -641,7 +645,7 @@ function initUploadModal() {
         }
         
         try {
-            const response = await fetch('/api/upload', {
+            const response = await fetch(API_BASE_URL + '/api/upload', {
                 method: 'POST',
                 body: formData
             });
@@ -666,7 +670,7 @@ function initUploadModal() {
 }
 
 function loadApprovedClips() {
-    fetch('/api/clips')
+    fetch(API_BASE_URL + '/api/clips')
         .then(response => response.json())
         .then(clips => {
             allClips = clips || [];
@@ -681,7 +685,7 @@ function loadApprovedClips() {
         });
     
     setInterval(() => {
-        fetch('/api/clips')
+        fetch(API_BASE_URL + '/api/clips')
             .then(response => response.json())
             .then(clips => {
                 allClips = clips || [];
@@ -714,7 +718,7 @@ function createClipCard(clip) {
     <div class="approved-clip-card">
         <div class="video-wrapper">
             <video data-clip-id="${clip.id}" preload="metadata" playsinline>
-                <source src="/approved/${clip.filename}" type="video/mp4">
+                <source src="${API_BASE_URL}/approved/${clip.filename}" type="video/mp4">
             </video>
             <div class="video-play-overlay">
                 <div class="play-circle">▶</div>
@@ -924,7 +928,7 @@ function initVideoControls(clipsGrid) {
         video.addEventListener('ended', function() {
             if (!viewCounted && !hasSkipped) {
                 viewCounted = true;
-                fetch(`/api/clip/${clipId}/view`).then(() => {
+                fetch(API_BASE_URL + `/api/clip/${clipId}/view`).then(() => {
                     animateViewCounter(card, clipId);
                 }).catch(() => {});
             }
@@ -974,7 +978,7 @@ function initInteractionButtons(clipsGrid) {
             
             const clipId = this.dataset.clipId;
             try {
-                const response = await fetch('/api/like', {
+                const response = await fetch(API_BASE_URL + '/api/like', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ user_id: currentUser.id, clip_id: clipId })
@@ -1005,7 +1009,7 @@ function initInteractionButtons(clipsGrid) {
             
             const clipId = this.dataset.clipId;
             try {
-                const response = await fetch('/api/dislike', {
+                const response = await fetch(API_BASE_URL + '/api/dislike', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ user_id: currentUser.id, clip_id: clipId })
@@ -1042,7 +1046,7 @@ function initInteractionButtons(clipsGrid) {
             }
             
             try {
-                const response = await fetch('/api/favorite', {
+                const response = await fetch(API_BASE_URL + '/api/favorite', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ user_id: currentUser.id, clip_id: clipId })
