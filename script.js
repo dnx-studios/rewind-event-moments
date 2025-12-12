@@ -3,7 +3,7 @@ let allClips = [];
 let videoSeekUsed = {};
 
 const API_BASE_URL = window.location.hostname.includes('github.io') 
-    ? 'https://e97c596c-1393-4a77-9095-957f14de7d2f-00-3apfzvtuj9297.janeway.replit.dev'
+    ? 'https://62c251f0-08d6-43a4-8a6a-fe5840a0fa0a-00-1jiizj6t0zwn3.riker.replit.dev'
     : '';
 
 document.addEventListener('DOMContentLoaded', function() {
