@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rewind Event Moments - Clips de Minecraft</title>
+    <title>DNX REWIND 2025 - Clips de Minecraft</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -19,18 +19,25 @@
 
     <nav class="navbar">
         <div class="logo">
-            <span class="logo-icon">⛏️</span>
-            <span class="logo-text">Rewind Event Moments</span>
+            <img src="rewind-logo.png" alt="Rewind Logo" class="logo-img">
+            <span class="logo-text"><span class="logo-line1">DNX</span><span class="logo-line2">REWIND 2025</span></span>
         </div>
         <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#clips">Clips</a></li>
-            <li><a href="#categorias">Categorias</a></li>
-            <li><a href="#discord">Discord</a></li>
+            <li><a href="#inicio" data-nav="inicio">Inicio</a></li>
+            <li><a href="#clips" data-nav="clips">Clips</a></li>
+            <li><a href="#categorias" data-nav="categorias">Categorias</a></li>
+            <li><a href="#discord" data-nav="discord">Discord</a></li>
         </ul>
-        <button class="cta-btn">
-            <span class="btn-icon">🎬</span> Subir Clip
-        </button>
+        <div class="user-area" id="userArea">
+            <div class="login-btn-nav" id="loginBtnNav">
+                <span class="btn-icon">🔐</span> Iniciar Sesión
+            </div>
+            <div class="user-profile" id="userProfile" style="display: none;">
+                <img class="user-avatar" id="userAvatar" src="" alt="Avatar">
+                <span class="user-name" id="userName"></span>
+                <button class="logout-btn" id="logoutBtn">Salir</button>
+            </div>
+        </div>
     </nav>
 
     <header class="hero" id="inicio">
@@ -46,48 +53,36 @@
             </h1>
             <p class="hero-desc">Clips epicos, fails legendarios y los momentos mas graciosos del universo Minecraft. Comparte y descubre contenido increible.</p>
             <div class="hero-buttons">
-                <button class="btn-primary">
-                    <span>▶</span> Ver Clips
+                <button class="btn-primary btn-subir-clip" id="btnSubirHero">
+                    <span>⬆</span> Subir Clip
                 </button>
-                <button class="btn-secondary">
-                    <span>⬆</span> Subir Video
+                <button class="btn-secondary" id="btnRequisitos">
+                    <span>📋</span> Requisitos
                 </button>
             </div>
             <div class="hero-stats">
                 <div class="stat-mini">
-                    <span class="stat-value">15K+</span>
+                    <span class="stat-value" id="stat-clips">0</span>
                     <span class="stat-label">Clips</span>
                 </div>
                 <div class="stat-mini">
-                    <span class="stat-value">50K+</span>
+                    <span class="stat-value" id="stat-video-views">0</span>
                     <span class="stat-label">Vistas</span>
                 </div>
                 <div class="stat-mini">
-                    <span class="stat-value">2K+</span>
+                    <span class="stat-value" id="stat-creators">0</span>
                     <span class="stat-label">Creadores</span>
                 </div>
             </div>
         </div>
         <div class="hero-visual">
             <div class="video-showcase">
-                <div class="video-frame main-video">
-                    <div class="video-overlay">
-                        <span class="play-btn">▶</span>
+                <div class="video-frame main-video empty-state">
+                    <div class="empty-placeholder">
+                        <span class="empty-icon">🎬</span>
+                        <h3>Clips Destacados</h3>
+                        <p>Los mejores clips estaran aqui</p>
                     </div>
-                    <div class="video-info">
-                        <span class="video-tag">🔥 Trending</span>
-                        <h3>MLG Water Bucket Epic Save</h3>
-                        <p>@ProGamer2024 • 125K vistas</p>
-                    </div>
-                </div>
-                <div class="floating-video v1">
-                    <span class="mini-tag">😂 Fails</span>
-                </div>
-                <div class="floating-video v2">
-                    <span class="mini-tag">⚔️ PvP</span>
-                </div>
-                <div class="floating-video v3">
-                    <span class="mini-tag">🏗️ Builds</span>
                 </div>
             </div>
         </div>
@@ -101,76 +96,16 @@
             </div>
             <h2>Momentos <span class="text-gradient">Legendarios</span></h2>
         </div>
-        <div class="clips-grid">
-            <div class="clip-card large">
-                <div class="clip-thumbnail">
-                    <div class="clip-overlay">
-                        <span class="play-icon">▶</span>
-                        <span class="clip-duration">0:32</span>
-                    </div>
-                </div>
-                <div class="clip-info">
-                    <div class="clip-meta">
-                        <span class="clip-category fire">🔥 Epico</span>
-                        <span class="clip-views">256K vistas</span>
-                    </div>
-                    <h3>Clutch imposible en el End</h3>
-                    <p class="clip-author">@MinecraftPro</p>
-                </div>
-            </div>
-            <div class="clip-card">
-                <div class="clip-thumbnail alt-1">
-                    <div class="clip-overlay">
-                        <span class="play-icon">▶</span>
-                        <span class="clip-duration">0:18</span>
-                    </div>
-                </div>
-                <div class="clip-info">
-                    <div class="clip-meta">
-                        <span class="clip-category laugh">😂 Gracioso</span>
-                        <span class="clip-views">89K vistas</span>
-                    </div>
-                    <h3>Creeper sorpresa en mi casa</h3>
-                    <p class="clip-author">@NoobPlayer</p>
-                </div>
-            </div>
-            <div class="clip-card">
-                <div class="clip-thumbnail alt-2">
-                    <div class="clip-overlay">
-                        <span class="play-icon">▶</span>
-                        <span class="clip-duration">1:05</span>
-                    </div>
-                </div>
-                <div class="clip-info">
-                    <div class="clip-meta">
-                        <span class="clip-category pvp">⚔️ PvP</span>
-                        <span class="clip-views">178K vistas</span>
-                    </div>
-                    <h3>1v4 Bedwars increible</h3>
-                    <p class="clip-author">@PvPMaster</p>
-                </div>
-            </div>
-            <div class="clip-card">
-                <div class="clip-thumbnail alt-3">
-                    <div class="clip-overlay">
-                        <span class="play-icon">▶</span>
-                        <span class="clip-duration">0:45</span>
-                    </div>
-                </div>
-                <div class="clip-info">
-                    <div class="clip-meta">
-                        <span class="clip-category build">🏗️ Build</span>
-                        <span class="clip-views">45K vistas</span>
-                    </div>
-                    <h3>Speedrun de casa moderna</h3>
-                    <p class="clip-author">@Builder99</p>
-                </div>
+        <div class="clips-empty-state">
+            <div class="empty-clips-box">
+                <span class="empty-clips-icon">📹</span>
+                <h3>Aun no hay clips</h3>
+                <p>Se el primero en compartir tus mejores momentos de Minecraft</p>
+                <button class="btn-primary btn-subir-clip">
+                    <span>⬆</span> Subir mi clip
+                </button>
             </div>
         </div>
-        <button class="load-more">
-            <span>Cargar mas clips</span>
-            <span class="arrow">↓</span>
-        </button>
     </section>
 
     <section class="categories" id="categorias">
@@ -182,120 +117,75 @@
             <h2>Categorias de <span class="text-gradient">Videos</span></h2>
         </div>
         <div class="categories-grid">
-            <div class="category-card cat-fails">
+            <div class="category-card cat-fails" data-category="fails">
                 <div class="cat-icon">💀</div>
                 <div class="cat-content">
                     <h3>Fails Epicos</h3>
                     <p>Los peores momentos que te haran reir</p>
-                    <span class="cat-count">2,345 clips</span>
+                    <span class="cat-count">0 clips</span>
                 </div>
                 <div class="cat-decoration"></div>
             </div>
-            <div class="category-card cat-pvp">
+            <div class="category-card cat-pvp" data-category="pvp">
                 <div class="cat-icon">⚔️</div>
                 <div class="cat-content">
                     <h3>PvP Highlights</h3>
                     <p>Las mejores jugadas competitivas</p>
-                    <span class="cat-count">1,892 clips</span>
+                    <span class="cat-count">0 clips</span>
                 </div>
                 <div class="cat-decoration"></div>
             </div>
-            <div class="category-card cat-builds">
+            <div class="category-card cat-builds" data-category="builds">
                 <div class="cat-icon">🏰</div>
                 <div class="cat-content">
                     <h3>Construcciones</h3>
                     <p>Builds increibles y speedruns</p>
-                    <span class="cat-count">3,156 clips</span>
+                    <span class="cat-count">0 clips</span>
                 </div>
                 <div class="cat-decoration"></div>
             </div>
-            <div class="category-card cat-redstone">
+            <div class="category-card cat-redstone" data-category="redstone">
                 <div class="cat-icon">🔴</div>
                 <div class="cat-content">
                     <h3>Redstone</h3>
                     <p>Inventos y maquinas locas</p>
-                    <span class="cat-count">987 clips</span>
+                    <span class="cat-count">0 clips</span>
                 </div>
                 <div class="cat-decoration"></div>
             </div>
-            <div class="category-card cat-survival">
+            <div class="category-card cat-survival" data-category="survival">
                 <div class="cat-icon">🌲</div>
                 <div class="cat-content">
                     <h3>Survival</h3>
                     <p>Momentos de supervivencia extrema</p>
-                    <span class="cat-count">4,521 clips</span>
+                    <span class="cat-count">0 clips</span>
                 </div>
                 <div class="cat-decoration"></div>
             </div>
-            <div class="category-card cat-mods">
+            <div class="category-card cat-mods" data-category="mods">
                 <div class="cat-icon">🧪</div>
                 <div class="cat-content">
                     <h3>Mods Locos</h3>
                     <p>Las cosas mas raras con mods</p>
-                    <span class="cat-count">1,234 clips</span>
+                    <span class="cat-count">0 clips</span>
                 </div>
                 <div class="cat-decoration"></div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section">
-        <div class="cta-content">
-            <div class="cta-blocks">
-                <div class="cta-block b1"></div>
-                <div class="cta-block b2"></div>
-                <div class="cta-block b3"></div>
-            </div>
-            <h2>¿Tienes un clip <span class="text-gradient">epico</span>?</h2>
-            <p>Comparte tus mejores momentos con la comunidad y hazte viral</p>
-            <div class="cta-buttons">
-                <button class="btn-primary large">
-                    <span>⬆</span> Subir mi clip
-                </button>
-                <button class="btn-ghost">
-                    Ver requisitos
-                </button>
+    <section class="category-view" id="categoryView" style="display: none;">
+        <div class="category-view-header">
+            <button class="btn-back" id="btnBackCategories">
+                <span>←</span> Volver a Categorias
+            </button>
+            <div class="category-view-info">
+                <span class="category-view-icon" id="categoryViewIcon"></span>
+                <h2 id="categoryViewTitle"></h2>
+                <span class="category-view-count" id="categoryViewCount"></span>
             </div>
         </div>
-    </section>
-
-    <section class="leaderboard">
-        <div class="section-header">
-            <div class="section-tag">
-                <span class="tag-icon">🏆</span>
-                <span>Top Creadores</span>
-            </div>
-            <h2>Hall of <span class="text-gradient">Fame</span></h2>
-        </div>
-        <div class="leaderboard-grid">
-            <div class="leader-card gold">
-                <div class="leader-rank">1</div>
-                <div class="leader-avatar">👑</div>
-                <div class="leader-info">
-                    <h4>@DiamondKing</h4>
-                    <p>523 clips • 2.1M vistas</p>
-                </div>
-                <div class="leader-badge">LEYENDA</div>
-            </div>
-            <div class="leader-card silver">
-                <div class="leader-rank">2</div>
-                <div class="leader-avatar">⭐</div>
-                <div class="leader-info">
-                    <h4>@CreeperHunter</h4>
-                    <p>412 clips • 1.8M vistas</p>
-                </div>
-                <div class="leader-badge">PRO</div>
-            </div>
-            <div class="leader-card bronze">
-                <div class="leader-rank">3</div>
-                <div class="leader-avatar">🎮</div>
-                <div class="leader-info">
-                    <h4>@BlockMaster</h4>
-                    <p>389 clips • 1.5M vistas</p>
-                </div>
-                <div class="leader-badge">ELITE</div>
-            </div>
-        </div>
+        <div class="category-clips-grid" id="categoryClipsGrid"></div>
     </section>
 
     <section class="discord-section" id="discord">
@@ -311,39 +201,18 @@
                 </div>
                 <h2>Unete a nuestra <span class="text-gradient">comunidad</span></h2>
                 <p>Conecta con miles de jugadores, comparte tus clips y participa en eventos exclusivos</p>
-                <a href="#" class="discord-btn" id="discord-link">
-                    <svg class="discord-btn-pixel" viewBox="0 0 24 18" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="1" y="0" width="2" height="2" fill="currentColor" opacity="0.8"/>
-                        <rect x="3" y="0" width="2" height="2" fill="currentColor"/>
-                        <rect x="17" y="0" width="2" height="2" fill="currentColor"/>
-                        <rect x="19" y="0" width="2" height="2" fill="currentColor" opacity="0.8"/>
-                        <rect x="0" y="2" width="2" height="2" fill="currentColor" opacity="0.6"/>
-                        <rect x="2" y="2" width="2" height="2" fill="currentColor"/>
-                        <rect x="4" y="2" width="2" height="2" fill="currentColor"/>
-                        <rect x="16" y="2" width="2" height="2" fill="currentColor"/>
-                        <rect x="18" y="2" width="2" height="2" fill="currentColor"/>
-                        <rect x="20" y="2" width="2" height="2" fill="currentColor" opacity="0.6"/>
-                        <rect x="0" y="4" width="22" height="2" fill="currentColor"/>
-                        <rect x="0" y="6" width="4" height="4" fill="currentColor"/>
-                        <rect x="4" y="6" width="4" height="4" fill="#5865F2"/>
-                        <rect x="8" y="6" width="6" height="4" fill="currentColor"/>
-                        <rect x="14" y="6" width="4" height="4" fill="#5865F2"/>
-                        <rect x="18" y="6" width="4" height="4" fill="currentColor"/>
-                        <rect x="2" y="10" width="18" height="2" fill="currentColor"/>
-                        <rect x="4" y="12" width="6" height="2" fill="currentColor"/>
-                        <rect x="12" y="12" width="6" height="2" fill="currentColor"/>
-                    </svg>
+                <a href="https://discord.gg/dnxcore" class="discord-btn" id="discord-btn" target="_blank">
                     <span>Unirse al Discord</span>
                     <div class="btn-shine"></div>
                 </a>
-                <div class="discord-stats">
+                <div class="discord-stats" id="discord-stats">
                     <div class="d-stat">
                         <span class="d-stat-dot online"></span>
-                        <span>2,458 online</span>
+                        <span id="online-count">Cargando...</span>
                     </div>
                     <div class="d-stat">
                         <span class="d-stat-dot members"></span>
-                        <span>15,234 miembros</span>
+                        <span id="members-count">Cargando...</span>
                     </div>
                 </div>
             </div>
@@ -354,8 +223,8 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="logo">
-                    <span class="logo-icon">⛏️</span>
-                    <span class="logo-text">Rewind Event Moments</span>
+                    <img src="rewind-logo.png" alt="Rewind Logo" class="logo-img">
+                    <span class="logo-text"><span class="logo-line1">DNX</span><span class="logo-line2">REWIND 2025</span></span>
                 </div>
                 <p>La mejor plataforma para clips de Minecraft en español</p>
                 <div class="footer-badges">
@@ -367,23 +236,19 @@
             <div class="footer-links">
                 <div class="footer-col">
                     <h4>Navegacion</h4>
-                    <a href="#">Inicio</a>
-                    <a href="#">Clips</a>
-                    <a href="#">Categorias</a>
-                    <a href="#">Subir</a>
+                    <a href="#inicio" data-nav="inicio">Inicio</a>
+                    <a href="#clips" data-nav="clips">Clips</a>
+                    <a href="#categorias" data-nav="categorias">Categorias</a>
                 </div>
                 <div class="footer-col">
                     <h4>Comunidad</h4>
-                    <a href="#">Discord</a>
-                    <a href="#">Foro</a>
-                    <a href="#">Eventos</a>
-                    <a href="#">Torneos</a>
+                    <a href="#discord" data-nav="discord">Discord</a>
                 </div>
                 <div class="footer-col">
                     <h4>Legal</h4>
-                    <a href="#">Terminos</a>
-                    <a href="#">Privacidad</a>
-                    <a href="#">Cookies</a>
+                    <a href="#" id="openTerminos">Terminos</a>
+                    <a href="#" id="openPrivacidad">Privacidad</a>
+                    <a href="#" id="openCookies">Cookies</a>
                 </div>
             </div>
         </div>
@@ -398,7 +263,7 @@
             <div class="cookie-icon">🍪</div>
             <div class="cookie-text">
                 <h3>¡Galletas de Minecraft!</h3>
-                <p>Usamos cookies para mejorar tu experiencia. Como las galletas de trigo en Minecraft, nos ayudan a funcionar mejor.</p>
+                <p>Usamos cookies para guardar tu sesión y mejorar tu experiencia. Como las galletas de trigo en Minecraft, nos ayudan a funcionar mejor.</p>
             </div>
             <div class="cookie-buttons">
                 <button class="cookie-btn accept" id="acceptCookies">
@@ -412,6 +277,217 @@
         <div class="cookie-decoration">
             <div class="cookie-block cb1"></div>
             <div class="cookie-block cb2"></div>
+        </div>
+    </div>
+
+    <div class="login-modal" id="loginModal">
+        <div class="modal-overlay" id="loginModalOverlay"></div>
+        <div class="modal-content login-modal-content">
+            <button class="modal-close" id="loginModalClose">&times;</button>
+            <div class="modal-header">
+                <span class="modal-icon">🔐</span>
+                <h2>Iniciar <span class="text-gradient">Sesión</span></h2>
+                <p>Ingresa tu contraseña para acceder</p>
+            </div>
+            <div class="login-preview" id="loginPreview" style="display: none;">
+                <img class="login-preview-avatar" id="loginPreviewAvatar" src="" alt="Avatar">
+                <span class="login-preview-name" id="loginPreviewName"></span>
+                <p class="login-preview-text">¿Eres tu? Confirma para continuar</p>
+                <button class="btn-primary" id="loginConfirmBtn">
+                    <span>✓</span> Aceptar
+                </button>
+                <button class="btn-secondary" id="loginCancelBtn">
+                    <span>✕</span> No soy yo
+                </button>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="loginPassword">Tu contraseña</label>
+                    <input type="password" id="loginPassword" name="password" placeholder="Tu contraseña" required>
+                </div>
+                <button type="submit" class="btn-primary login-submit" id="loginSubmitBtn">
+                    <span>🔓</span> Iniciar Sesión
+                </button>
+                <button type="button" class="btn-how-to-login" id="howToLoginBtn">
+                    <span>❓</span> ¿Cómo inicio sesión?
+                </button>
+            </form>
+            <div class="login-instructions" id="loginInstructions" style="display: none;">
+                <div class="instructions-header">
+                    <span class="instructions-icon">📋</span>
+                    <h3>Como iniciar sesion</h3>
+                </div>
+                <div class="instructions-content">
+                    <div class="instruction-step">
+                        <span class="step-number">1</span>
+                        <p>Dirigete al canal <strong>🔥┃rewind-2025</strong> en Discord</p>
+                    </div>
+                    <div class="instruction-step">
+                        <span class="step-number">2</span>
+                        <p>Dale click al boton para registrarte</p>
+                    </div>
+                    <div class="instruction-step">
+                        <span class="step-number">3</span>
+                        <p>Recibiras tu contraseña por mensaje privado</p>
+                    </div>
+                </div>
+                <div class="instructions-note">
+                    <span>⚠️</span>
+                    <p>¿No encuentras el canal? <a href="https://discord.gg/dnxcore" target="_blank">Unete a la comunidad</a> y reporta el problema</p>
+                </div>
+            </div>
+            <div class="login-error" id="loginError" style="display: none;">
+                <span class="error-icon">❌</span>
+                <span class="error-text">Contraseña incorrecta</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="upload-modal" id="uploadModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-header">
+                <span class="modal-icon">🎬</span>
+                <h2>Subir tu <span class="text-gradient">Clip</span></h2>
+                <p>Comparte tu mejor momento de Minecraft</p>
+            </div>
+            <div class="upload-login-required" id="uploadLoginRequired">
+                <div class="login-required-icon">🔐</div>
+                <h3>Inicia sesion para subir clips</h3>
+                <p>Necesitas iniciar sesion para poder subir tus mejores momentos</p>
+                <form id="uploadLoginForm" class="upload-login-form">
+                    <div class="form-group">
+                        <label for="uploadLoginPassword">Tu contraseña</label>
+                        <input type="password" id="uploadLoginPassword" name="password" placeholder="Tu contraseña" required>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <span>🔓</span> Iniciar Sesión
+                    </button>
+                    <button type="button" class="btn-how-to-login" id="uploadHowToLoginBtn">
+                        <span>❓</span> ¿Cómo inicio sesión?
+                    </button>
+                </form>
+                <div class="upload-login-instructions" id="uploadLoginInstructions" style="display: none;">
+                    <div class="instructions-header">
+                        <span class="instructions-icon">📋</span>
+                        <h3>Como iniciar sesion</h3>
+                    </div>
+                    <div class="instructions-content">
+                        <div class="instruction-step">
+                            <span class="step-number">1</span>
+                            <p>Dirigete al canal <strong>🔥┃rewind-2025</strong> en Discord</p>
+                        </div>
+                        <div class="instruction-step">
+                            <span class="step-number">2</span>
+                            <p>Dale click al boton para registrarte</p>
+                        </div>
+                        <div class="instruction-step">
+                            <span class="step-number">3</span>
+                            <p>Recibiras tu contraseña por mensaje privado</p>
+                        </div>
+                    </div>
+                    <div class="instructions-note">
+                        <span>⚠️</span>
+                        <p>¿No encuentras el canal? <a href="https://discord.gg/dnxcore" target="_blank">Unete a la comunidad</a> y reporta el problema</p>
+                    </div>
+                </div>
+                <div class="upload-login-error" id="uploadLoginError" style="display: none;">
+                    <span class="error-icon">❌</span>
+                    <span class="error-text">Contraseña incorrecta</span>
+                </div>
+            </div>
+            <form id="uploadForm" class="upload-form">
+                <div class="form-group">
+                    <label for="videoTitle">Titulo del clip</label>
+                    <input type="text" id="videoTitle" name="title" placeholder="Mi mejor clutch..." required maxlength="100">
+                </div>
+                <div class="form-group">
+                    <label for="category">Categoria</label>
+                    <select id="category" name="category" required>
+                        <option value="">Selecciona una categoria</option>
+                        <option value="fails">💀 Fails Epicos</option>
+                        <option value="pvp">⚔️ PvP Highlights</option>
+                        <option value="builds">🏰 Construcciones</option>
+                        <option value="redstone">🔴 Redstone</option>
+                        <option value="survival">🌲 Survival</option>
+                        <option value="mods">🧪 Mods Locos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="videoFile">Video (maximo 20 segundos)</label>
+                    <div class="file-upload-area" id="fileUploadArea">
+                        <input type="file" id="videoFile" name="video" accept="video/*" required hidden>
+                        <div class="file-upload-content">
+                            <span class="upload-icon">📹</span>
+                            <p>Arrastra tu video aqui o <span class="upload-link">selecciona un archivo</span></p>
+                            <span class="upload-info">MP4, MOV, WebM - Max 20 segundos</span>
+                        </div>
+                        <div class="file-selected" id="fileSelected" style="display: none;">
+                            <span class="file-icon">🎥</span>
+                            <span class="file-name" id="fileName"></span>
+                            <button type="button" class="file-remove" id="fileRemove">&times;</button>
+                        </div>
+                    </div>
+                    <div class="video-duration-error" id="durationError" style="display: none;">
+                        El video debe ser de maximo 20 segundos
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary upload-submit" id="submitBtn">
+                    <span>⬆</span> Enviar para revision
+                </button>
+                <p class="upload-note">Tu clip sera revisado por nuestro equipo antes de publicarse</p>
+            </form>
+            <div class="upload-success" id="uploadSuccess" style="display: none;">
+                <span class="success-icon">🎬</span>
+                <h3>Clip enviado correctamente</h3>
+                <div class="review-badge">
+                    <span class="pulse-dot"></span>
+                    <span>En revision por el equipo</span>
+                </div>
+                <p>Tu video esta siendo revisado por nuestro equipo. Te notificaremos en Discord cuando sea aprobado y publicado.</p>
+                <button class="btn-secondary" id="closeSuccess">
+                    <span>✓</span> Entendido
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="requirements-modal" id="requirementsModal">
+        <div class="modal-overlay" id="requirementsModalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="requirementsModalClose">&times;</button>
+            <div class="requirements-header">
+                <span class="req-icon">📋</span>
+                <h3>Requisitos para subir clips</h3>
+            </div>
+            <ul class="requirements-list">
+                <li><span class="req-check">✓</span> Video de maximo 20 segundos</li>
+                <li><span class="req-check">✓</span> Formatos: MP4, MOV o WebM</li>
+                <li><span class="req-check">✓</span> Contenido de Minecraft unicamente</li>
+                <li><span class="req-check">✓</span> Sin contenido ofensivo o inapropiado</li>
+                <li><span class="req-check">✓</span> Calidad minima 480p recomendada</li>
+                <li><span class="req-check">✓</span> Sin marcas de agua excesivas</li>
+            </ul>
+            <p class="requirements-note">Los clips seran revisados por nuestro equipo antes de publicarse</p>
+            <button class="btn-primary" id="requirementsModalOk" style="width: 100%; margin-top: 1rem;">
+                <span>✓</span> Entendido
+            </button>
+        </div>
+    </div>
+
+    <div class="legal-modal" id="legalModal">
+        <div class="modal-overlay" id="legalModalOverlay"></div>
+        <div class="modal-content legal-modal-content">
+            <button class="modal-close" id="legalModalClose">&times;</button>
+            <div class="legal-header">
+                <span class="legal-icon" id="legalIcon"></span>
+                <h2 id="legalTitle"></h2>
+            </div>
+            <div class="legal-body" id="legalBody"></div>
+            <button class="btn-primary" id="legalModalBack" style="width: 100%; margin-top: 1.5rem;">
+                <span>←</span> Volver
+            </button>
         </div>
     </div>
 
